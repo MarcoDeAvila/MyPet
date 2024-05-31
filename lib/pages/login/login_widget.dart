@@ -88,6 +88,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     child: Container(
                       width: 300.0,
                       child: TextFormField(
+                        key: ValueKey('Correo_v69e'),
                         controller: _model.correoTextController,
                         focusNode: _model.correoFocusNode,
                         autofocus: false,

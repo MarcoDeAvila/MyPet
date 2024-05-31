@@ -440,9 +440,8 @@ class _RegistroRecordatorioWidgetState
                             );
                             return;
                           }
-                          setState(() {
-                            FFAppState().nextIDRec = FFAppState().nextIDRec + 1;
-                          });
+                          FFAppState().nextIDRec = FFAppState().nextIDRec + 1;
+                          setState(() {});
 
                           await RecordatoriosRecord.collection
                               .doc()

@@ -124,9 +124,8 @@ class _ItemRecordatorioWidgetState extends State<ItemRecordatorioWidget>
                   size: 24.0,
                 ),
                 onPressed: () async {
-                  setState(() {
-                    FFAppState().currentRecord = widget.idRecord!;
-                  });
+                  FFAppState().currentRecord = widget.idRecord!;
+                  setState(() {});
                   await showModalBottomSheet(
                     isScrollControlled: true,
                     backgroundColor: Colors.transparent,

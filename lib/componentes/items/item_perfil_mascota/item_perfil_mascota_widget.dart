@@ -104,15 +104,14 @@ class _ItemPerfilMascotaWidgetState extends State<ItemPerfilMascotaWidget>
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          setState(() {
-                            FFAppState().currentMascotaID = widget.mascotaID!;
-                            FFAppState().currentFoto = widget.parameter1!;
-                            FFAppState().currentEdad = widget.edad!;
-                            FFAppState().currentPeso = widget.peso!;
-                            FFAppState().currentNombre = widget.nombre!;
-                            FFAppState().currentRaza = widget.raza!;
-                            FFAppState().currentEspecie = widget.especie!;
-                          });
+                          FFAppState().currentMascotaID = widget.mascotaID!;
+                          FFAppState().currentFoto = widget.parameter1!;
+                          FFAppState().currentEdad = widget.edad!;
+                          FFAppState().currentPeso = widget.peso!;
+                          FFAppState().currentNombre = widget.nombre!;
+                          FFAppState().currentRaza = widget.raza!;
+                          FFAppState().currentEspecie = widget.especie!;
+                          setState(() {});
 
                           context.goNamed(
                             'Home',

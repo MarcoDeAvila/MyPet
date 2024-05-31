@@ -123,9 +123,8 @@ class _EliminarRecordatorioWidgetState
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          setState(() {
-                            FFAppState().currentRecord = 0;
-                          });
+                          FFAppState().currentRecord = 0;
+                          setState(() {});
                           Navigator.pop(context);
                         },
                         text: 'Cancelar',
@@ -158,9 +157,8 @@ class _EliminarRecordatorioWidgetState
                         onPressed: () async {
                           await containerRecordatoriosRecord!.reference
                               .delete();
-                          setState(() {
-                            FFAppState().currentRecord = 0;
-                          });
+                          FFAppState().currentRecord = 0;
+                          setState(() {});
                           Navigator.pop(context);
                         },
                         text: 'Eliminar',

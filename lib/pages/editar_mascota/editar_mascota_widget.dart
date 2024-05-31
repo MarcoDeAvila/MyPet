@@ -157,10 +157,9 @@ class _EditarMascotaWidgetState extends State<EditarMascotaWidget> {
                               size: 30.0,
                             ),
                             onPressed: () async {
-                              setState(() {
-                                FFAppState().currentFoto =
-                                    _model.uploadedFileUrl2;
-                              });
+                              FFAppState().currentFoto =
+                                  _model.uploadedFileUrl2;
+                              setState(() {});
                               final selectedMedia =
                                   await selectMediaWithSourceBottomSheet(
                                 context: context,

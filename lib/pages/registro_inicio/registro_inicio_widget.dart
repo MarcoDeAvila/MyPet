@@ -706,9 +706,8 @@ class _RegistroInicioWidgetState extends State<RegistroInicioWidget> {
                           }
                         }
 
-                        setState(() {
-                          FFAppState().nextID = FFAppState().nextID + 1;
-                        });
+                        FFAppState().nextID = FFAppState().nextID + 1;
+                        setState(() {});
 
                         await MascotasRecord.collection
                             .doc()
