@@ -88,7 +88,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     child: Container(
                       width: 300.0,
                       child: TextFormField(
-                        key: ValueKey('Correo_v69e'),
+                        key: ValueKey('CorreoValue'),
                         controller: _model.correoTextController,
                         focusNode: _model.correoFocusNode,
                         autofocus: false,
@@ -163,6 +163,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     child: Container(
                       width: 300.0,
                       child: TextFormField(
+                        key: ValueKey('PasswordValue'),
                         controller: _model.passwordTextController,
                         focusNode: _model.passwordFocusNode,
                         autofocus: false,
@@ -250,6 +251,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       FFButtonWidget(
+                        key: ValueKey('Button_brdq'),
                         onPressed: () async {
                           if (_model.formKey.currentState == null ||
                               !_model.formKey.currentState!.validate()) {
@@ -305,6 +307,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         ),
                       ),
                       FFButtonWidget(
+                        key: ValueKey('Button_u71a'),
                         onPressed: () async {
                           if (_model.formKey.currentState == null ||
                               !_model.formKey.currentState!.validate()) {

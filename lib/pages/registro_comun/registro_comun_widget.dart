@@ -159,6 +159,7 @@ class _RegistroComunWidgetState extends State<RegistroComunWidget> {
                       child: Container(
                         width: 300.0,
                         child: TextFormField(
+                          key: ValueKey('NombreValue'),
                           controller: _model.textFieldNombreTextController,
                           focusNode: _model.textFieldNombreFocusNode,
                           onChanged: (_) => EasyDebounce.debounce(
@@ -272,6 +273,7 @@ class _RegistroComunWidgetState extends State<RegistroComunWidget> {
                               child: Container(
                                 width: 300.0,
                                 child: TextFormField(
+                                  key: ValueKey('EdadValue'),
                                   controller:
                                       _model.textFieldEdadTextController,
                                   focusNode: _model.textFieldEdadFocusNode,
@@ -392,6 +394,7 @@ class _RegistroComunWidgetState extends State<RegistroComunWidget> {
                               child: Container(
                                 width: 300.0,
                                 child: TextFormField(
+                                  key: ValueKey('PesoValue'),
                                   controller:
                                       _model.textFieldPesoTextController,
                                   focusNode: _model.textFieldPesoFocusNode,
@@ -505,6 +508,7 @@ class _RegistroComunWidgetState extends State<RegistroComunWidget> {
                       child: Container(
                         width: 300.0,
                         child: TextFormField(
+                          key: ValueKey('RazaValue'),
                           controller: _model.textFieldRazaTextController,
                           focusNode: _model.textFieldRazaFocusNode,
                           onChanged: (_) => EasyDebounce.debounce(
@@ -605,6 +609,7 @@ class _RegistroComunWidgetState extends State<RegistroComunWidget> {
                       ),
                     ),
                     FlutterFlowDropDown<String>(
+                      key: ValueKey('EspecieValue'),
                       controller: _model.dropDownValueController ??=
                           FormFieldController<String>(null),
                       options: ['Perro', 'Gato'],
@@ -676,6 +681,7 @@ class _RegistroComunWidgetState extends State<RegistroComunWidget> {
                             ),
                           ),
                           FFButtonWidget(
+                            key: ValueKey('Button_14ug'),
                             onPressed: () async {
                               if (_model.formKey.currentState == null ||
                                   !_model.formKey.currentState!.validate()) {

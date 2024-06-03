@@ -102,16 +102,19 @@ class _SeleccionMascotaWidgetState extends State<SeleccionMascotaWidget> {
                           itemBuilder: (context, listViewIndex) {
                             final listViewMascotasRecord =
                                 listViewMascotasRecordList[listViewIndex];
-                            return ItemPerfilMascotaWidget(
-                              key: Key(
-                                  'Key1g4_${listViewIndex}_of_${listViewMascotasRecordList.length}'),
-                              parameter1: listViewMascotasRecord.foto,
-                              mascotaID: listViewMascotasRecord.mascotaID,
-                              edad: listViewMascotasRecord.edad,
-                              peso: listViewMascotasRecord.peso,
-                              nombre: listViewMascotasRecord.nombre,
-                              raza: listViewMascotasRecord.raza,
-                              especie: listViewMascotasRecord.especie,
+                            return Container(
+                              key: ValueKey('itemPerfilMascota_i9ph'),
+                              child: ItemPerfilMascotaWidget(
+                                key: Key(
+                                    'Key1g4_${listViewIndex}_of_${listViewMascotasRecordList.length}'),
+                                parameter1: listViewMascotasRecord.foto,
+                                mascotaID: listViewMascotasRecord.mascotaID,
+                                edad: listViewMascotasRecord.edad,
+                                peso: listViewMascotasRecord.peso,
+                                nombre: listViewMascotasRecord.nombre,
+                                raza: listViewMascotasRecord.raza,
+                                especie: listViewMascotasRecord.especie,
+                              ),
                             );
                           },
                         );
@@ -121,11 +124,13 @@ class _SeleccionMascotaWidgetState extends State<SeleccionMascotaWidget> {
                 ),
               ),
               FlutterFlowIconButton(
+                key: ValueKey('IconButton_1un1'),
                 borderRadius: 360.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
                 fillColor: Color(0xFF05A8EB),
                 icon: Icon(
+                  key: ValueKey('IconButton_1un1'),
                   Icons.add,
                   color: Colors.white,
                   size: 32.0,

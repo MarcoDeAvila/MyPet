@@ -30,13 +30,58 @@ void main() async {
     await appState.initializePersistedState();
   });
 
-  testWidgets('Hello World Test', (WidgetTester tester) async {
+  testWidgets('HU-9-Register', (WidgetTester tester) async {
     await tester.pumpWidget(ChangeNotifierProvider(
       create: (context) => FFAppState(),
       child: MyApp(),
     ));
 
-    await tester.enterText(find.byKey(ValueKey('Correo_v69e')), 'Hello World');
+    await tester.enterText(
+        find.byKey(ValueKey('CorreoValue')), 'correo_prueba@gmail.com');
+    await tester.enterText(find.byKey(ValueKey('PasswordValue')), 'mypet123');
+    await tester.pumpAndSettle(Duration(milliseconds: 3000));
+    await tester.tap(find.byKey(ValueKey('Button_u71a')));
+    expect(find.byKey(ValueKey('IconButton_1un1')), findsOneWidget);
+  });
+
+  testWidgets('HU-9-login', (WidgetTester tester) async {
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(),
+    ));
+
+    await tester.enterText(
+        find.byKey(ValueKey('CorreoValue')), 'correo_prueba@gmail.com');
+    await tester.enterText(find.byKey(ValueKey('PasswordValue')), 'mypet123');
+    await tester.pumpAndSettle(Duration(milliseconds: 3000));
+    await tester.tap(find.byKey(ValueKey('Button_brdq')));
+    expect(find.byKey(ValueKey('IconButton_1un1')), findsOneWidget);
+  });
+
+  testWidgets('HU-2-RegistrarMascota', (WidgetTester tester) async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'correo_prueba@gmail.com', password: 'mypet123');
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(),
+    ));
+
+    await tester.tap(find.byKey(ValueKey('IconButton_1un1')));
+    expect(find.byKey(ValueKey('NombreValue')), findsOneWidget);
+    await tester.pumpAndSettle(Duration(milliseconds: 3000));
+    await tester.enterText(find.byKey(ValueKey('NombreValue')), 'McFly');
+    await tester.enterText(find.byKey(ValueKey('EdadValue')), '3');
+    await tester.enterText(find.byKey(ValueKey('PesoValue')), '26');
+    await tester.enterText(
+        find.byKey(ValueKey('RazaValue')), 'Golden Retriever');
+    await tester.tap(find.descendant(
+      of: find.byKey(ValueKey('EspecieValue')),
+      matching: find.text('Perro'),
+    ));
+    await tester.pumpAndSettle(Duration(milliseconds: 3000));
+    await tester.tap(find.byKey(ValueKey('Button_14ug')));
+    await tester.pumpAndSettle(Duration(milliseconds: 3000));
+    expect(find.byKey(ValueKey('itemPerfilMascota_i9ph')), findsOneWidget);
   });
 }
 
