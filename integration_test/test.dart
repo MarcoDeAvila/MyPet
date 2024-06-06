@@ -30,32 +30,17 @@ void main() async {
     await appState.initializePersistedState();
   });
 
-  testWidgets('HU-9-Register', (WidgetTester tester) async {
+  testWidgets('HU-1-Mascotas', (WidgetTester tester) async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'correo_prueba@gmail.com', password: 'mypet123');
     await tester.pumpWidget(ChangeNotifierProvider(
       create: (context) => FFAppState(),
-      child: MyApp(),
+      child: MyApp(
+        entryPage: SeleccionMascotaWidget(),
+      ),
     ));
 
-    await tester.enterText(
-        find.byKey(ValueKey('CorreoValue')), 'correo_prueba@gmail.com');
-    await tester.enterText(find.byKey(ValueKey('PasswordValue')), 'mypet123');
-    await tester.pumpAndSettle(Duration(milliseconds: 3000));
-    await tester.tap(find.byKey(ValueKey('Button_u71a')));
-    expect(find.byKey(ValueKey('IconButton_1un1')), findsOneWidget);
-  });
-
-  testWidgets('HU-9-login', (WidgetTester tester) async {
-    await tester.pumpWidget(ChangeNotifierProvider(
-      create: (context) => FFAppState(),
-      child: MyApp(),
-    ));
-
-    await tester.enterText(
-        find.byKey(ValueKey('CorreoValue')), 'correo_prueba@gmail.com');
-    await tester.enterText(find.byKey(ValueKey('PasswordValue')), 'mypet123');
-    await tester.pumpAndSettle(Duration(milliseconds: 3000));
-    await tester.tap(find.byKey(ValueKey('Button_brdq')));
-    expect(find.byKey(ValueKey('IconButton_1un1')), findsOneWidget);
+    expect(find.byKey(ValueKey('itemPerfilMascota_i9ph')), findsWidgets);
   });
 
   testWidgets('HU-2-RegistrarMascota', (WidgetTester tester) async {
@@ -82,6 +67,136 @@ void main() async {
     await tester.tap(find.byKey(ValueKey('Button_14ug')));
     await tester.pumpAndSettle(Duration(milliseconds: 3000));
     expect(find.byKey(ValueKey('itemPerfilMascota_i9ph')), findsOneWidget);
+  });
+
+  testWidgets('HU-3-Vacunas', (WidgetTester tester) async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'correo_prueba@gmail.com', password: 'mypet123');
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: SeleccionMascotaWidget(),
+      ),
+    ));
+
+    await tester.tap(find.byKey(ValueKey('SeleccionMascota_kes3')));
+    expect(find.byKey(ValueKey('NavBar1_4bja')), findsOneWidget);
+    await tester.tap(find.byKey(ValueKey('vacunasValue')));
+    expect(find.byKey(ValueKey('Text_7wr7')), findsOneWidget);
+  });
+
+  testWidgets('HU-4-Historias', (WidgetTester tester) async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'correo_prueba@gmail.com', password: 'mypet123');
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: SeleccionMascotaWidget(),
+      ),
+    ));
+
+    await tester.tap(find.byKey(ValueKey('SeleccionMascota_kes3')));
+    expect(find.byKey(ValueKey('NavBar1_4bja')), findsOneWidget);
+    await tester.tap(find.byKey(ValueKey('historiasValue')));
+    expect(find.byKey(ValueKey('Text_tsxz')), findsOneWidget);
+  });
+
+  testWidgets('HU-5-Recordatorios', (WidgetTester tester) async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'correo_prueba@gmail.com', password: 'mypet123');
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: SeleccionMascotaWidget(),
+      ),
+    ));
+
+    await tester.tap(find.byKey(ValueKey('SeleccionMascota_kes3')));
+    expect(find.byKey(ValueKey('NavBar1_4bja')), findsOneWidget);
+    await tester.tap(find.byKey(ValueKey('recordValue')));
+    expect(find.byKey(ValueKey('Text_uiwd')), findsOneWidget);
+  });
+
+  testWidgets('HU-6-Consejos', (WidgetTester tester) async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'correo_prueba@gmail.com', password: 'mypet123');
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: SeleccionMascotaWidget(),
+      ),
+    ));
+
+    await tester.tap(find.byKey(ValueKey('SeleccionMascota_kes3')));
+    expect(find.byKey(ValueKey('NavBar1_4bja')), findsOneWidget);
+    await tester.tap(find.byKey(ValueKey('consejosValue')));
+    expect(find.byKey(ValueKey('Text_5s8d')), findsOneWidget);
+  });
+
+  testWidgets('HU-7-EditarDatosMascota', (WidgetTester tester) async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'correo_prueba@gmail.com', password: 'mypet123');
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: SeleccionMascotaWidget(),
+      ),
+    ));
+
+    await tester.tap(find.byKey(ValueKey('SeleccionMascota_kes3')));
+    expect(find.byKey(ValueKey('NavBar1_4bja')), findsOneWidget);
+    await tester.tap(find.byKey(ValueKey('Icon_8t4c')));
+    expect(find.byKey(ValueKey('TextFieldNombre_ugm6')), findsOneWidget);
+    await tester.enterText(find.byKey(ValueKey('TextFieldNombre_ugm6')), 'Doc');
+    await tester.tap(find.byKey(ValueKey('Button_c77r')));
+    expect(find.byKey(ValueKey('itemPerfilMascota_i9ph')), findsOneWidget);
+  });
+
+  testWidgets('HU-8-EliminarMascota', (WidgetTester tester) async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'correo_prueba@gmail.com', password: 'mypet123');
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: SeleccionMascotaWidget(),
+      ),
+    ));
+
+    await tester.tap(find.byKey(ValueKey('SeleccionMascota_kes3')));
+    expect(find.byKey(ValueKey('NavBar1_4bja')), findsOneWidget);
+    await tester.tap(find.byKey(ValueKey('Icon_8t4c')));
+    expect(find.byKey(ValueKey('TextFieldNombre_ugm6')), findsOneWidget);
+    await tester.enterText(find.byKey(ValueKey('TextFieldNombre_ugm6')), 'Doc');
+    await tester.tap(find.byKey(ValueKey('Button_c18x')));
+    expect(find.byKey(ValueKey('itemPerfilMascota_i9ph')), findsNothing);
+  });
+
+  testWidgets('HU-9-login', (WidgetTester tester) async {
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(),
+    ));
+
+    await tester.enterText(
+        find.byKey(ValueKey('CorreoValue')), 'correo_prueba@gmail.com');
+    await tester.enterText(find.byKey(ValueKey('PasswordValue')), 'mypet123');
+    await tester.pumpAndSettle(Duration(milliseconds: 3000));
+    await tester.tap(find.byKey(ValueKey('Button_brdq')));
+    expect(find.byKey(ValueKey('IconButton_1un1')), findsOneWidget);
+  });
+
+  testWidgets('HU-9-Register', (WidgetTester tester) async {
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(),
+    ));
+
+    await tester.enterText(
+        find.byKey(ValueKey('CorreoValue')), 'correo_prueba@gmail.com');
+    await tester.enterText(find.byKey(ValueKey('PasswordValue')), 'mypet123');
+    await tester.pumpAndSettle(Duration(milliseconds: 3000));
+    await tester.tap(find.byKey(ValueKey('Button_u71a')));
+    expect(find.byKey(ValueKey('IconButton_1un1')), findsOneWidget);
   });
 }
 

@@ -208,6 +208,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   );
                                 },
                                 child: Icon(
+                                  key: ValueKey('Icon_8t4c'),
                                   Icons.edit_outlined,
                                   color: Colors.white,
                                   size: 48.0,
@@ -327,7 +328,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                   child: wrapWithModel(
                     model: _model.navBar1Model,
                     updateCallback: () => setState(() {}),
-                    child: NavBar1Widget(),
+                    child: NavBar1Widget(
+                      key: ValueKey('NavBar1_4bja'),
+                    ),
                   ),
                 ),
               ],

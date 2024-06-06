@@ -79,6 +79,7 @@ class _HistoriasWidgetState extends State<HistoriasWidget> {
                               size: 48.0,
                             ),
                             Text(
+                              key: ValueKey('Text_tsxz'),
                               'Historias Clinicas',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)

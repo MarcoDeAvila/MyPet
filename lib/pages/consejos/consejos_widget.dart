@@ -85,6 +85,7 @@ class _ConsejosWidgetState extends State<ConsejosWidget> {
                               size: 48.0,
                             ),
                             Text(
+                              key: ValueKey('Text_5s8d'),
                               'Consejos',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)

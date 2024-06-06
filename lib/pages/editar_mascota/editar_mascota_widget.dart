@@ -206,6 +206,7 @@ class _EditarMascotaWidgetState extends State<EditarMascotaWidget> {
                       child: Container(
                         width: 300.0,
                         child: TextFormField(
+                          key: ValueKey('TextFieldNombre_ugm6'),
                           controller: _model.textFieldNombreTextController,
                           focusNode: _model.textFieldNombreFocusNode,
                           onChanged: (_) => EasyDebounce.debounce(
@@ -733,6 +734,7 @@ class _EditarMascotaWidgetState extends State<EditarMascotaWidget> {
                             ),
                           ),
                           FFButtonWidget(
+                            key: ValueKey('Button_c77r'),
                             onPressed: () async {
                               if (_model.formKey.currentState == null ||
                                   !_model.formKey.currentState!.validate()) {
@@ -893,6 +895,7 @@ class _EditarMascotaWidgetState extends State<EditarMascotaWidget> {
                       ),
                     ),
                     FFButtonWidget(
+                      key: ValueKey('Button_c18x'),
                       onPressed: () async {
                         await showModalBottomSheet(
                           isScrollControlled: true,
@@ -917,6 +920,7 @@ class _EditarMascotaWidgetState extends State<EditarMascotaWidget> {
                       },
                       text: 'Eliminar Perfil',
                       icon: Icon(
+                        key: ValueKey('Button_c18x'),
                         Icons.delete_rounded,
                         size: 15.0,
                       ),

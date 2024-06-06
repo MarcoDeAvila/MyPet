@@ -79,6 +79,7 @@ class _RecordatoriosWidgetState extends State<RecordatoriosWidget> {
                               size: 40.0,
                             ),
                             Text(
+                              key: ValueKey('Text_uiwd'),
                               'Recordatorios',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)

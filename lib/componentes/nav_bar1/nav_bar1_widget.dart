@@ -96,10 +96,12 @@ class _NavBar1WidgetState extends State<NavBar1Widget> {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 FlutterFlowIconButton(
+                  key: ValueKey('vacunasValue'),
                   borderRadius: 360.0,
                   borderWidth: 0.0,
                   buttonSize: 50.0,
                   icon: Icon(
+                    key: ValueKey('vacunasValue'),
                     FFIcons.kvaccineIcon142648,
                     color: Colors.white,
                     size: 32.0,
@@ -118,10 +120,12 @@ class _NavBar1WidgetState extends State<NavBar1Widget> {
                   },
                 ),
                 FlutterFlowIconButton(
+                  key: ValueKey('recordValue'),
                   borderRadius: 360.0,
                   borderWidth: 0.0,
                   buttonSize: 50.0,
                   icon: Icon(
+                    key: ValueKey('recordValue'),
                     FFIcons.kbellAlarmIcon132786,
                     color: Colors.white,
                     size: 24.0,
@@ -182,6 +186,7 @@ class _NavBar1WidgetState extends State<NavBar1Widget> {
                             );
                           },
                           child: Container(
+                            key: ValueKey('inicoValue'),
                             width: 100.0,
                             height: 100.0,
                             clipBehavior: Clip.antiAlias,
@@ -189,6 +194,7 @@ class _NavBar1WidgetState extends State<NavBar1Widget> {
                               shape: BoxShape.circle,
                             ),
                             child: Image.network(
+                              key: ValueKey('inicoValue'),
                               FFAppState().currentFoto,
                               fit: BoxFit.cover,
                             ),
@@ -199,10 +205,12 @@ class _NavBar1WidgetState extends State<NavBar1Widget> {
                   ],
                 ),
                 FlutterFlowIconButton(
+                  key: ValueKey('historiasValue'),
                   borderRadius: 360.0,
                   borderWidth: 0.0,
                   buttonSize: 50.0,
                   icon: Icon(
+                    key: ValueKey('historiasValue'),
                     FFIcons.kchecklistDocumentListPaper107939,
                     color: Colors.white,
                     size: 24.0,
@@ -221,10 +229,12 @@ class _NavBar1WidgetState extends State<NavBar1Widget> {
                   },
                 ),
                 FlutterFlowIconButton(
+                  key: ValueKey('consejosValue'),
                   borderRadius: 360.0,
                   borderWidth: 0.0,
                   buttonSize: 50.0,
                   icon: Icon(
+                    key: ValueKey('consejosValue'),
                     Icons.pets_outlined,
                     color: Colors.white,
                     size: 24.0,

@@ -79,6 +79,7 @@ class _VacunasWidgetState extends State<VacunasWidget> {
                               size: 48.0,
                             ),
                             Text(
+                              key: ValueKey('Text_7wr7'),
                               'Vacunas',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
